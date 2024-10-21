@@ -1,0 +1,91 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# pinsqs
+
+**pinsqs** provides convenience functions to incorporate multithreaded reading and writing of `.qs`
+files from the [qs](https://github.com/qsbase/qs) package into the
+[pins](https://github.com/rstudio/pins-r/) infrastructure.
+
+Motivated by this [feature request](https://github.com/rstudio/pins-r/issues/725) that will not be
+implemented as I felt it would benefit my own workflows.
+
+## Installation
+
+You can install this package using:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("adamoshen/pinsqs")
+```
+
+## Example usage
+
+```{r}
+library(tibble)
+library(magrittr)
+library(pins)
+library(pinsqs)
+```
+
+Initialise the pin board, as usual:
+
+```{r}
+board <- board_temp()
+```
+
+Create data to be pinned:
+
+```{r}
+rock <- datasets::rock %>%
+  as_tibble()
+```
+
+Pin the data to the board (as a `.qs` file):
+
+```{r}
+board %>%
+  pin_qsave(
+    rock, "rock-tibble",
+    description = "`rock` data set as a tibble"
+  )
+```
+
+Checking the contents of our pin board, as usual:
+
+```{r}
+board %>%
+  pin_search()
+```
+
+View pin metadata, as usual:
+
+```{r}
+board %>%
+  pin_meta("rock-tibble")
+```
+
+Read the pinned data (from a `.qs` file):
+
+```{r}
+board %>%
+  pin_qread("rock-tibble")
+```
+
+## Notes
+
+If a value for `nthreads` is not supplied to `pin_qread()` or `pin_qsave()`, it will default to
+`parallel::detectCores() / 2`. Otherwise, if `parallel::detectCores()` is `NA`, it will fallback to
+the default of the [qs](https://github.com/qsbase/qs) package, which is 1.

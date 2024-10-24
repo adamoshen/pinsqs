@@ -7,8 +7,8 @@ Description: Provides convenience functions to incorporate multithreaded
     reading and writing of `.qs` files from the `qs` package into the
     `pins` infrastructure.
 License: Apache License (>= 2)
-URL: https://github.com/adamoshen/pinsqs,
-    https://adamoshen.github.io/pinsqs/
+URL: https://adamoshen.github.io/pinsqs/,
+    https://github.com/adamoshen/pinsqs
 Imports: 
     fs,
     pins,

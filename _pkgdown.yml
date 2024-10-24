@@ -1,0 +1,8 @@
+url: https://adamoshen.github.io/pinsqs
+template:
+  bootstrap: 5
+  bootswatch: zephyr
+  bslib:
+    primary: "#65A026"
+    code_font: {google: "Fira Mono"}
+  theme: atom-one-light

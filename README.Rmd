@@ -19,8 +19,9 @@ knitr::opts_chunk$set(
 files from the [qs](https://github.com/qsbase/qs) package into the
 [pins](https://github.com/rstudio/pins-r/) infrastructure.
 
-Motivated by this [feature request](https://github.com/rstudio/pins-r/issues/725) that will not be
-implemented as I felt it would benefit my own workflows.
+Motivated by this [feature request](https://github.com/rstudio/pins-r/issues/725) that does have any
+plans for implementation in the near future, as I felt its use (and reuse) could benefit my own
+workflows.
 
 ## Installation
 

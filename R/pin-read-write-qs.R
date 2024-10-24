@@ -57,5 +57,5 @@ pin_qsave <- function(board, x, name, nthreads=NULL, ...) {
   withr::defer(fs::file_delete(path))
 
   qs::qsave(x, path, nthreads=nthreads)
-  pins::pin_upload(board, paths=path, name=name, ...)
+  pins::pin_upload(board, path, name, ...)
 }

@@ -9,9 +9,9 @@ reading and writing of `.qs` files from the
 [pins](https://github.com/rstudio/pins-r/) infrastructure.
 
 Motivated by this [feature
-request](https://github.com/rstudio/pins-r/issues/725) that does have
-any plans for implementation in the near future, as I felt its use (and
-reuse) could benefit my own workflows.
+request](https://github.com/rstudio/pins-r/issues/725) that does not
+have any plans for implementation in the near future, but I felt its
+bundling into a package could benefit my own workflows.
 
 ## Installation
 
@@ -52,7 +52,7 @@ board %>%
     rock, "rock-tibble",
     description = "`rock` data set as a tibble"
   )
-#> Creating new version '20241024T215719Z-d8ed3'
+#> Creating new version '20241024T224708Z-d8ed3'
 ```
 
 Checking the contents of our pin board, as usual:
@@ -63,7 +63,7 @@ board %>%
 #> # A tibble: 1 x 6
 #>   name        type  title               created             file_size meta      
 #>   <chr>       <chr> <chr>               <dttm>              <fs::byt> <list>    
-#> 1 rock-tibble file  rock-tibble: a pin~ 2024-10-24 17:57:19     1.01K <pins_met>
+#> 1 rock-tibble file  rock-tibble: a pin~ 2024-10-24 18:47:08     1.01K <pins_met>
 ```
 
 View pin metadata, as usual:
@@ -80,14 +80,14 @@ board %>%
 #>  $ description: chr "`rock` data set as a tibble"
 #>  $ tags       : NULL
 #>  $ urls       : NULL
-#>  $ created    : POSIXct[1:1], format: "2024-10-24 17:57:19"
+#>  $ created    : POSIXct[1:1], format: "2024-10-24 18:47:08"
 #>  $ api_version: int 1
 #>  $ user       : list()
 #>  $ name       : chr "rock-tibble"
 #>  $ local      :List of 3
-#>   ..$ dir    : 'fs_path' chr "C:/Users/Adam/AppData/Local/Temp/RtmpM705SR/pins-ec986d363a6f/rock-tibble/20241024T215719Z-d8ed3"
+#>   ..$ dir    : 'fs_path' chr "C:/Users/Adam/AppData/Local/Temp/Rtmp0SoJbE/pins-ef8c62ec17fe/rock-tibble/20241024T224708Z-d8ed3"
 #>   ..$ url    : NULL
-#>   ..$ version: chr "20241024T215719Z-d8ed3"
+#>   ..$ version: chr "20241024T224708Z-d8ed3"
 ```
 
 Read the pinned data (from a `.qs` file):

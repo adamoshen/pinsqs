@@ -66,7 +66,7 @@
 <div class="page-header"><h1 id="pinsqs">pinsqs<a class="anchor" aria-label="anchor" href="#pinsqs"></a>
 </h1></div>
 <p><strong>pinsqs</strong> provides convenience functions to incorporate multithreaded reading and writing of <code>.qs</code> files from the <a href="https://github.com/qsbase/qs" class="external-link">qs</a> package into the <a href="https://github.com/rstudio/pins-r/" class="external-link">pins</a> infrastructure.</p>
-<p>Motivated by this <a href="https://github.com/rstudio/pins-r/issues/725" class="external-link">feature request</a> that does have any plans for implementation in the near future, as I felt its use (and reuse) could benefit my own workflows.</p>
+<p>Motivated by this <a href="https://github.com/rstudio/pins-r/issues/725" class="external-link">feature request</a> that does not have any plans for implementation in the near future, but I felt its bundling into a package could benefit my own workflows.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -97,7 +97,7 @@
 <span>    <span class="va">rock</span>, <span class="st">"rock-tibble"</span>,</span>
 <span>    description <span class="op">=</span> <span class="st">"`rock` data set as a tibble"</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="co">#&gt; Creating new version '20241024T215719Z-d8ed3'</span></span></code></pre></div>
+<span><span class="co">#&gt; Creating new version '20241024T224708Z-d8ed3'</span></span></code></pre></div>
 <p>Checking the contents of our pin board, as usual:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">board</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -105,7 +105,7 @@
 <span><span class="co">#&gt; # A tibble: 1 x 6</span></span>
 <span><span class="co">#&gt;   name        type  title               created             file_size meta      </span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;               &lt;dttm&gt;              &lt;fs::byt&gt; &lt;list&gt;    </span></span>
-<span><span class="co">#&gt; 1 rock-tibble file  rock-tibble: a pin~ 2024-10-24 17:57:19     1.01K &lt;pins_met&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 rock-tibble file  rock-tibble: a pin~ 2024-10-24 18:47:08     1.01K &lt;pins_met&gt;</span></span></code></pre></div>
 <p>View pin metadata, as usual:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">board</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -119,14 +119,14 @@
 <span><span class="co">#&gt;  $ description: chr "`rock` data set as a tibble"</span></span>
 <span><span class="co">#&gt;  $ tags       : NULL</span></span>
 <span><span class="co">#&gt;  $ urls       : NULL</span></span>
-<span><span class="co">#&gt;  $ created    : POSIXct[1:1], format: "2024-10-24 17:57:19"</span></span>
+<span><span class="co">#&gt;  $ created    : POSIXct[1:1], format: "2024-10-24 18:47:08"</span></span>
 <span><span class="co">#&gt;  $ api_version: int 1</span></span>
 <span><span class="co">#&gt;  $ user       : list()</span></span>
 <span><span class="co">#&gt;  $ name       : chr "rock-tibble"</span></span>
 <span><span class="co">#&gt;  $ local      :List of 3</span></span>
-<span><span class="co">#&gt;   ..$ dir    : 'fs_path' chr "C:/Users/Adam/AppData/Local/Temp/RtmpM705SR/pins-ec986d363a6f/rock-tibble/20241024T215719Z-d8ed3"</span></span>
+<span><span class="co">#&gt;   ..$ dir    : 'fs_path' chr "C:/Users/Adam/AppData/Local/Temp/Rtmp0SoJbE/pins-ef8c62ec17fe/rock-tibble/20241024T224708Z-d8ed3"</span></span>
 <span><span class="co">#&gt;   ..$ url    : NULL</span></span>
-<span><span class="co">#&gt;   ..$ version: chr "20241024T215719Z-d8ed3"</span></span></code></pre></div>
+<span><span class="co">#&gt;   ..$ version: chr "20241024T224708Z-d8ed3"</span></span></code></pre></div>
 <p>Read the pinned data (from a <code>.qs</code> file):</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">board</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>

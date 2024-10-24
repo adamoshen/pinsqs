@@ -2,7 +2,7 @@ Package: pinsqs
 Title: `qs` Multithreading Support for `pins`
 Version: 0.0.0.9000
 Authors@R: 
-    person("Adam", "Shen", , "adam.shen@carleton.ca", role = c("aut", "cre"))
+    person("Adam", "Shen", , "adamshen1@gmail.com", role = c("aut", "cre"))
 Description: Provides convenience functions to incorporate multithreaded reading and writing of
     `.qs` files from the `qs` package into the `pins` infrastructure.
 License: Apache License (>= 2)
@@ -18,3 +18,4 @@ Imports:
 Suggests: 
     magrittr,
     tibble
+URL: https://github.com/adamoshen/pinsqs

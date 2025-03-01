@@ -8,6 +8,7 @@ Description: Provides convenience functions to incorporate multithreaded
     `pins` infrastructure.
 License: Apache License (>= 2)
 URL: https://adamoshen.github.io/pinsqs, https://github.com/adamoshen/pinsqs
+BugReports: https://github.com/adamoshen/pinsqs/issues
 Imports: 
     fs,
     pins,

@@ -1,8 +1,8 @@
-pandoc: 3.2.1
-pkgdown: 2.1.1
+pandoc: 3.6.4
+pkgdown: 2.2.0
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-02-03T04:58Z
+last_built: 2026-03-12T01:08Z
 urls:
   reference: https://adamoshen.github.io/pinsqs/reference
   article: https://adamoshen.github.io/pinsqs/articles

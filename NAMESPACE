@@ -2,4 +2,5 @@
 
 export(pin_qread)
 export(pin_qsave)
+importFrom(lifecycle,deprecated)
 importFrom(rlang,"%||%")

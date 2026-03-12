@@ -4,5 +4,15 @@ template:
   bootswatch: zephyr
   bslib:
     primary: "#65A026"
-    code_font: {google: "Fira Mono"}
+    base_font: {google: "Google Sans"}
+    code_font: {google: "Google Sans Code"}
   theme: atom-one-light
+
+reference:
+- title: "Reading and writing"
+  contents:
+  - pin_qread
+
+- title: "Deprecated"
+  contents:
+  - deprecated

@@ -25,7 +25,14 @@ benefit my own workflows.
 
 ## Installation
 
-You can install this package using:
+You can install this package using either
+
+``` r
+# install.packages("pak")
+pak::pak("adamoshen/pinsqs")
+```
+
+or
 
 ``` r
 # install.packages("remotes")
@@ -58,7 +65,7 @@ Pin the data to the board (as a `.qs` file):
 
 ```{r}
 board %>%
-  pin_qsave(
+  pin_qwrite(
     rock, "rock-tibble",
     description = "`rock` data set as a tibble"
   )
@@ -87,6 +94,6 @@ board %>%
 
 ## Notes
 
-If a value for `nthreads` is not supplied to `pin_qread()` or `pin_qsave()`, it will default to
+If a value for `nthreads` is not supplied to `pin_qread()` or `pin_qwrite()`, it will default to
 `parallel::detectCores() / 2`. Otherwise, if `parallel::detectCores()` is `NA`, it will fallback to
 the default of the [qs](https://github.com/qsbase/qs) package, which is 1.

@@ -15,7 +15,14 @@ bundling into a package could benefit my own workflows.
 
 ## Installation
 
-You can install this package using:
+You can install this package using either
+
+``` r
+# install.packages("pak")
+pak::pak("adamoshen/pinsqs")
+```
+
+or
 
 ``` r
 # install.packages("remotes")
@@ -48,11 +55,11 @@ Pin the data to the board (as a `.qs` file):
 
 ``` r
 board %>%
-  pin_qsave(
+  pin_qwrite(
     rock, "rock-tibble",
     description = "`rock` data set as a tibble"
   )
-#> Creating new version '20241024T224708Z-d8ed3'
+#> Creating new version '20260312T010106Z-d8ed3'
 ```
 
 Checking the contents of our pin board, as usual:
@@ -60,10 +67,10 @@ Checking the contents of our pin board, as usual:
 ``` r
 board %>%
   pin_search()
-#> # A tibble: 1 x 6
+#> # A tibble: 1 × 6
 #>   name        type  title               created             file_size meta      
 #>   <chr>       <chr> <chr>               <dttm>              <fs::byt> <list>    
-#> 1 rock-tibble file  rock-tibble: a pin~ 2024-10-24 18:47:08     1.01K <pins_met>
+#> 1 rock-tibble file  rock-tibble: a pin… 2026-03-11 21:01:06     1.01K <pins_met>
 ```
 
 View pin metadata, as usual:
@@ -80,14 +87,14 @@ board %>%
 #>  $ description: chr "`rock` data set as a tibble"
 #>  $ tags       : NULL
 #>  $ urls       : NULL
-#>  $ created    : POSIXct[1:1], format: "2024-10-24 18:47:08"
+#>  $ created    : POSIXct[1:1], format: "2026-03-11 21:01:06"
 #>  $ api_version: int 1
 #>  $ user       : list()
 #>  $ name       : chr "rock-tibble"
 #>  $ local      :List of 3
-#>   ..$ dir    : 'fs_path' chr "C:/Users/Adam/AppData/Local/Temp/Rtmp0SoJbE/pins-ef8c62ec17fe/rock-tibble/20241024T224708Z-d8ed3"
+#>   ..$ dir    : 'fs_path' chr "C:/Users/Adam/AppData/Local/Temp/RtmpCKnOLs/pins-53d8119e63e5/rock-tibble/20260312T010106Z-d8ed3"
 #>   ..$ url    : NULL
-#>   ..$ version: chr "20241024T224708Z-d8ed3"
+#>   ..$ version: chr "20260312T010106Z-d8ed3"
 ```
 
 Read the pinned data (from a `.qs` file):
@@ -95,7 +102,7 @@ Read the pinned data (from a `.qs` file):
 ``` r
 board %>%
   pin_qread("rock-tibble")
-#> # A tibble: 48 x 4
+#> # A tibble: 48 × 4
 #>     area  peri  shape  perm
 #>    <int> <dbl>  <dbl> <dbl>
 #>  1  4990 2792. 0.0903   6.3
@@ -108,12 +115,12 @@ board %>%
 #>  8  8209 4345. 0.164   17.1
 #>  9  8393 3682. 0.204  119  
 #> 10  6425 3099. 0.162  119  
-#> # i 38 more rows
+#> # ℹ 38 more rows
 ```
 
 ## Notes
 
 If a value for `nthreads` is not supplied to `pin_qread()` or
-`pin_qsave()`, it will default to `parallel::detectCores() / 2`.
+`pin_qwrite()`, it will default to `parallel::detectCores() / 2`.
 Otherwise, if `parallel::detectCores()` is `NA`, it will fallback to the
 default of the [qs](https://github.com/qsbase/qs) package, which is 1.

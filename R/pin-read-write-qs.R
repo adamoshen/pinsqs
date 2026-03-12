@@ -24,7 +24,7 @@
 #' board %>%
 #'   pin_qsave(
 #'     rock, "rock-tibble",
-#'     description="`rock` data set as a tibble"
+#'     description = "`rock` data set as a tibble"
 #'   )
 #'
 #' # Checking the contents of our pin board, as usual
@@ -40,22 +40,22 @@
 #'   pin_qread("rock-tibble")
 #' @rdname read-write
 #' @export
-pin_qread <- function(board, name, nthreads=NULL, ...) {
+pin_qread <- function(board, name, nthreads = NULL, ...) {
   nthreads <- nthreads %||% get_nthreads()
 
   x <- pins::pin_download(board, name, ...)
-  qs::qread(x, nthreads=nthreads)
+  qs::qread(x, nthreads = nthreads)
 }
 
 #' @param x An object to pin.
 #' @rdname read-write
 #' @export
-pin_qsave <- function(board, x, name, nthreads=NULL, ...) {
+pin_qsave <- function(board, x, name, nthreads = NULL, ...) {
   nthreads <- nthreads %||% get_nthreads()
 
   path <- fs::path_temp(fs::path_ext_set(name, "qs"))
   withr::defer(fs::file_delete(path))
 
-  qs::qsave(x, path, nthreads=nthreads)
+  qs::qsave(x, path, nthreads = nthreads)
   pins::pin_upload(board, path, name, ...)
 }

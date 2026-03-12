@@ -8,8 +8,17 @@
 \description{
 Provides convenience functions to incorporate multithreaded reading and writing of `.qs` files from the `qs` package into the `pins` infrastructure.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://adamoshen.github.io/pinsqs}
+  \item \url{https://github.com/adamoshen/pinsqs}
+  \item Report bugs at \url{https://github.com/adamoshen/pinsqs/issues}
+}
+
+}
 \author{
-\strong{Maintainer}: Adam Shen \email{adam.shen@carleton.ca}
+\strong{Maintainer}: Adam Shen \email{adamshen1@gmail.com}
 
 }
 \keyword{internal}

@@ -24,7 +24,7 @@
 #'
 #' # Pin the data to the board (as a `.qs` file)
 #' board %>%
-#'   pin_qsave(
+#'   pin_qwrite(
 #'     rock, "rock-tibble",
 #'     description = "`rock` data set as a tibble"
 #'   )

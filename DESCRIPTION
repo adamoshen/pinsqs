@@ -1,6 +1,6 @@
 Package: pinsqs
 Title: `qs` Multithreading Support for `pins`
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person("Adam", "Shen", , "adamshen1@gmail.com", role = c("aut", "cre"))
 Description: Provides convenience functions to incorporate multithreaded
@@ -11,6 +11,7 @@ URL: https://adamoshen.github.io/pinsqs, https://github.com/adamoshen/pinsqs
 BugReports: https://github.com/adamoshen/pinsqs/issues
 Imports: 
     fs,
+    lifecycle,
     pins,
     qs,
     rlang,
@@ -20,4 +21,4 @@ Suggests:
     tibble
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.3

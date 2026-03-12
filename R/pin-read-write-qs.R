@@ -1,6 +1,8 @@
 #' Read and write `.qs` objects to and from a board
 #'
-#' Use `pin_qsave()` to pin a `.qs` object, and use `pin_qread()` to retrieve it.
+#' Use `pin_qwrite()` to pin a `.qs` object, and use `pin_qread()` to retrieve it.
+#'
+#' Note: `pin_qsave()` has been deprecated in favour of `pin_qwrite()`.
 #'
 #' @param board A pin board, created by a `pins::board_*()` function.
 #' @param name Pin name.
@@ -50,7 +52,7 @@ pin_qread <- function(board, name, nthreads = NULL, ...) {
 #' @param x An object to pin.
 #' @rdname read-write
 #' @export
-pin_qsave <- function(board, x, name, nthreads = NULL, ...) {
+pin_qwrite <- function(board, x, name, nthreads = NULL, ...) {
   nthreads <- nthreads %||% get_nthreads()
 
   path <- fs::path_temp(fs::path_ext_set(name, "qs"))

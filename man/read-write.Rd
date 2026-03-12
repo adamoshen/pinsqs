@@ -2,12 +2,12 @@
 % Please edit documentation in R/pin-read-write-qs.R
 \name{pin_qread}
 \alias{pin_qread}
-\alias{pin_qsave}
+\alias{pin_qwrite}
 \title{Read and write \code{.qs} objects to and from a board}
 \usage{
 pin_qread(board, name, nthreads = NULL, ...)
 
-pin_qsave(board, x, name, nthreads = NULL, ...)
+pin_qwrite(board, x, name, nthreads = NULL, ...)
 }
 \arguments{
 \item{board}{A pin board, created by a \verb{pins::board_*()} function.}
@@ -23,7 +23,10 @@ methods for a specific board. This includes additional fields such as \code{titl
 \item{x}{An object to pin.}
 }
 \description{
-Use \code{pin_qsave()} to pin a \code{.qs} object, and use \code{pin_qread()} to retrieve it.
+Use \code{pin_qwrite()} to pin a \code{.qs} object, and use \code{pin_qread()} to retrieve it.
+}
+\details{
+Note: \code{pin_qsave()} has been deprecated in favour of \code{pin_qwrite()}.
 }
 \examples{
 library(tibble)
@@ -41,7 +44,7 @@ rock <- datasets::rock \%>\%
 board \%>\%
   pin_qsave(
     rock, "rock-tibble",
-    description="`rock` data set as a tibble"
+    description = "`rock` data set as a tibble"
   )
 
 # Checking the contents of our pin board, as usual
